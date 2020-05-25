@@ -36,10 +36,10 @@ class Graph(defaultdict):
   """Efficient basic implementation of nx `Graph' â€“ Undirected graphs with self loops"""  
   def __init__(self):
     super(Graph, self).__init__(list)
-
+  # 节点，获取key
   def nodes(self):
     return self.keys()
-
+  # 下一个节点
   def adjacency_iter(self):
     return self.iteritems()
 
@@ -243,7 +243,7 @@ def load_adjacencylist(file_, undirected=False, chunksize=10000, unchecked=True)
 
   return G 
 
-
+# x y 类型数据，转化为邻接表形式；
 def load_edgelist(file_, undirected=True):
   G = Graph()
   with open(file_) as f:
